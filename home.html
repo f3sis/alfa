@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alfa Internet e TV | Fibra Óptica em São Francisco de Itabapoana</title>
+  <meta name="description" content="Alfa Internet e TV: internet fibra óptica, TV e suporte local em São Francisco de Itabapoana/RJ." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --red: #dc2626;
+      --red-dark: #991b1b;
+      --red-soft: #fef2f2;
+      --black: #101010;
+      --dark: #151515;
+      --text: #18181b;
+      --muted: #6b7280;
+      --line: #eeeeee;
+      --white: #ffffff;
+      --whatsapp: #25d366;
+      --radius: 24px;
+      --container: 1180px;
+      --shadow: 0 24px 70px rgba(16,16,16,.10);
+      --shadow-red: 0 24px 70px rgba(220,38,38,.18);
+      --nav-height: 78px;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Sora", system-ui, -apple-system, sans-serif;
+      background: #fff;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .section { padding: 100px 0; }
+    .section-soft { background: #fafafa; }
+
+    /* ===== TOPBAR ===== */
+    .topbar {
+      background: var(--black);
+      color: #d4d4d8;
+      font-size: 12px;
+    }
+    .topbar .container {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .topbar-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .topbar-links a { transition: color .2s; }
+    .topbar-links a:hover { color: #fff; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+      transition: box-shadow .25s ease;
+    }
+    .navbar.is-scrolled {
+      box-shadow: 0 12px 30px rgba(0,0,0,.07);
+    }
+    .nav-wrap {
+      min-height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    /* ===== BRAND / LOGO ===== */
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .brand img {
+      height: 58px;
+      width: auto;
+      object-fit: contain;
+      transition: transform .25s ease;
+    }
+    .brand img:hover { transform: scale(1.03); }
+
+    /* ===== NAV MENU ===== */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-menu a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #3f3f46;
+      position: relative;
+      padding: 8px 14px;
+      border-radius: 10px;
+      transition: color .2s, background .2s;
+    }
+    /* Underline indicator */
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 4px;
+      height: 2px;
+      background: var(--red);
+      border-radius: 999px;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform .25s cubic-bezier(.4,0,.2,1);
+    }
+    .nav-menu a:hover { color: var(--red); background: var(--red-soft); }
+    .nav-menu a.active { color: var(--red); }
+    .nav-menu a.active::after { transform: scaleX(1); }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(220,38,38,.24);
+    }
+    .btn-primary:hover { background: #b91c1c; transform: translateY(-2px); box-shadow: 0 18px 36px rgba(220,38,38,.32); }
+    .btn-outline {
+      background: rgba(255,255,255,.85);
+      color: var(--red);
+      border: 1.5px solid rgba(220,38,38,.40);
+    }
+    .btn-outline:hover { background: var(--red-soft); transform: translateY(-2px); }
+    .btn-white {
+      background: #fff;
+      color: var(--red);
+      border-radius: 14px;
+      padding: 16px 30px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      transition: transform .2s ease;
+      position: relative;
+      z-index: 2;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    /* ===== MOBILE MENU TOGGLE ===== */
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--red-soft);
+      color: var(--red);
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      border: none;
+    }
+    .mobile-menu{
+  display:none;
+  background:#fff;
+  border-top:1px solid var(--line);
+  padding:18px 20px 24px;
+}
+
+.mobile-menu.open{
+  display:block;
+  animation:mobileMenuFade .25s ease;
+}
+
+.mobile-menu a{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-height:58px;
+  padding:0 18px;
+  border-radius:16px;
+  font-weight:700;
+  color:#27272a;
+  margin-bottom:10px;
+  transition:.22s ease;
+  border:1px solid transparent;
+}
+
+.mobile-menu a i{
+  width:18px;
+  text-align:center;
+  font-size:16px;
+  color:var(--red);
+}
+
+.mobile-menu a:hover{
+  background:var(--red-soft);
+  border-color:rgba(220,38,38,.10);
+}
+
+.mobile-menu a.active{
+  background:var(--red-soft);
+  color:var(--red);
+  border-color:rgba(220,38,38,.12);
+}
+
+.mobile-whatsapp{
+  margin-top:16px;
+  background:linear-gradient(135deg,#25d366,#1faa52);
+  color:#fff !important;
+  justify-content:center;
+  font-weight:800;
+  min-height:58px;
+  box-shadow:0 14px 30px rgba(37,211,102,.24);
+}
+
+.mobile-whatsapp i{
+  color:#fff !important;
+  font-size:20px;
+}
+
+.mobile-whatsapp:hover{
+  transform:translateY(-2px);
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+@keyframes mobileMenuFade{
+
+  from{
+    opacity:0;
+    transform:translateY(-10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+    /* ===== EYEBROW / LABEL ===== */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--red-soft);
+      color: var(--red-dark);
+      border: 1px solid rgba(220,38,38,.12);
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      margin-bottom: 24px;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+      animation: pulseScale 2s ease-in-out infinite;
+    }
+    @keyframes pulseScale {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: .7; }
+    }
+    .label {
+      display: block;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+    .section-title h2, .split-text h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      font-weight: 900;
+    }
+    .section-title p, .split-text p {
+      margin-top: 16px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+    .highlight-number {
+      color: var(--red);
+      font-size: 1.2em;
+      font-weight: 900;
+    }
+
+    /* ===== REVEAL ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 0 40px;
+      background:
+        radial-gradient(circle at top left, rgba(220,38,38,.08), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    }
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1fr 700px;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content { max-width: 700px; }
+    .hero h1 {
+      font-size: clamp(44px, 5.5vw, 80px);
+      line-height: 1.03;
+      letter-spacing: -3.5px;
+      font-weight: 900;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .hero h1 span{
+      color:var(--red);
+      white-space:nowrap;
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 580px;
+    }
+    .stat-mini {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px 18px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.05);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .stat-mini:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 50px rgba(220,38,38,.10);
+    }
+    .stat-mini strong {
+      display: block;
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 900;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+    .stat-mini span { color: var(--muted); font-size: 12px; font-weight: 700; }
+
+    /* Hero mascot */
+    .hero-mascot {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 200px;
+    }
+    .hero-mascot-glow {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: rgba(220,38,38,.08);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+    .mascot-wrapper {
+      position: relative;
+      width: 580px;
+      height: 580px;
+      flex-shrink: 0;
+      animation: floatMascot 5s ease-in-out infinite;
+    }
+    .mascot-slide {
+      position: absolute !important;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      object-fit: contain;
+      object-position: center bottom;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.2s ease, visibility 1.2s ease;
+      filter: drop-shadow(0 28px 40px rgba(0,0,0,.14));
+    }
+    .mascot-slide.active { opacity: 1; visibility: visible; }
+    @keyframes floatMascot {
+      0%, 100% { transform: translateY(-50px); }
+      50% { transform: translateY(-68px); }
+    }
+
+    /* ===== ALWAYS ON ===== */
+    .always-on {
+      position: relative;
+      z-index: 5;
+      margin-top: 20px;
+    }
+    .always-card {
+      position: relative;
+      overflow: hidden;
+      background: #111;
+      color: #fff;
+      border: 1px solid rgba(220,38,38,.28);
+      border-radius: 32px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.2fr .85fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow-red);
+    }
+    .always-card::before {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(220,38,38,.38), transparent 60%);
+      pointer-events: none;
+    }
+    .always-text {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .always-logo strong {
+      display: block;
+      color: var(--red);
+      font-size: clamp(50px, 6.5vw, 88px);
+      line-height: .85;
+      letter-spacing: -4px;
+      font-weight: 900;
+    }
+    .always-logo span {
+      display: block;
+      color: rgba(255,255,255,.72);
+      font-size: clamp(24px, 2.8vw, 44px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+    .always-badge {
+      display: inline-flex;
+      margin-top: 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      color: #fff;
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .07em;
+    }
+    .always-copy h2 {
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 900;
+      letter-spacing: -1.4px;
+      margin-bottom: 10px;
+    }
+    .always-copy p { color: #d4d4d8; line-height: 1.7; font-size: 15px; }
+    .always-copy strong { color: #fff; }
+    .plan-featured {
+      position: relative;
+      z-index: 2;
+      background: rgba(0,0,0,.4);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 26px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+    .plan-featured small {
+      color: var(--red);
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: .12em;
+      font-size: 12px;
+    }
+    .speed-big {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      margin: 8px 0;
+    }
+    .speed-big strong { font-size: 72px; line-height: .9; font-weight: 900; }
+    .speed-big span {
+      background: var(--red);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .price-box {
+      background: var(--red);
+      border-radius: 20px;
+      padding: 16px 18px;
+      width: 185px;
+      height: 124px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 32px rgba(220,38,38,.30);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .price-content {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto;
+      align-items: start;
+      justify-content: center;
+      line-height: .86;
+      white-space: nowrap;
+    }
+    .price-content .currency { grid-column:1; grid-row:1; font-size:17px; font-weight:900; margin-top:16px; margin-right:3px; }
+    .price-content .amount { grid-column:2; grid-row:1/span 2; font-size:62px; font-weight:900; letter-spacing:-4px; }
+    .price-content .cents { grid-column:3; grid-row:1; font-size:26px; font-weight:900; margin-top:10px; margin-left:2px; }
+    .price-content .month { grid-column:3; grid-row:2; font-size:12px; font-weight:900; margin-top:-1px; margin-left:3px; }
+    .always-on-btn {
+      margin-top: 16px;
+      width: 100%;
+      min-height: 50px;
+      border-radius: 14px;
+      background: #fff;
+      color: var(--red);
+      font-weight: 900;
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform .25s ease, background .25s ease;
+      box-shadow: 0 10px 22px rgba(0,0,0,.16);
+      border: none;
+      cursor: pointer;
+    }
+    .always-on-btn:hover { transform: translateY(-3px); background: #f8f8f8; }
+
+    /* ===== PLANS GRID ===== */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+    .plan-card {
+      position: relative;
+      background: #fff;
+      border: 1.5px solid var(--line);
+      border-radius: 22px;
+      padding: 30px 20px 24px;
+      box-shadow: 0 16px 38px rgba(0,0,0,.04);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .plan-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(220,38,38,.25);
+      box-shadow: 0 28px 60px rgba(220,38,38,.12);
+    }
+    .plan-card.popular {
+      border-color: var(--red);
+      box-shadow: 0 20px 52px rgba(220,38,38,.14);
+    }
+    .tag {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--red);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 900;
+      white-space: nowrap;
+      letter-spacing: .08em;
+    }
+    .plan-speed strong { font-size: 50px; font-weight: 900; letter-spacing: -2px; }
+    .plan-speed span { color: var(--muted); font-size: 15px; font-weight: 800; }
+    .plan-price {
+      margin: 12px 0 20px;
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+    }
+    .plan-price small { color: var(--muted); font-weight: 800; font-size: 14px; }
+    .plan-price strong { font-size: 36px; font-weight: 900; letter-spacing: -1.4px; }
+    .plan-price span { font-size: 17px; font-weight: 900; }
+    .plan-price em { color: #aaa; font-size: 12px; font-style: normal; margin-left: 2px; }
+    .features {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+    .features li {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: #3f3f46;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .check {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      border-radius: 50%;
+      background: var(--red-soft);
+      color: var(--red);
+      display: grid;
+      place-items: center;
+      font-size: 8px;
+    }
+
+    /* ===== STATS STRIP ===== */
+    .stats-strip {
+      background: var(--red);
+      color: #fff;
+      padding: 70px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stat-item { text-align: center; }
+    .stat-item strong {
+      display: block;
+      font-size: clamp(38px, 5vw, 58px);
+      font-weight: 900;
+      line-height: 1;
+    }
+    .stat-item span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* ===== SPLIT LAYOUT ===== */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .split-media {
+      position: relative;
+      min-height: 460px;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.34)),
+        url("fotoCidade.png") center / cover no-repeat;
+    }
+    .media-card {
+      position: absolute;
+      left: 26px;
+      bottom: 26px;
+      width: min(340px, calc(100% - 52px));
+      background: rgba(255,255,255,.93);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.15);
+    }
+    .media-card strong { display: block; color: var(--red); font-size: 26px; font-weight: 900; margin-bottom: 6px; }
+    .media-card p { color: #444; font-size: 13px; line-height: 1.55; }
+
+    /* ===== VALUES ===== */
+    .values-list { display: grid; gap: 16px; }
+    .value-card {
+      background: #fff;
+      border: 1.5px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.04);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .value-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,.08); }
+    .value-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--red-soft);
+      color: var(--red);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .value-card h3 { color: var(--red); text-transform: uppercase; font-size: 12px; font-weight: 900; letter-spacing: .07em; margin-bottom: 7px; }
+    .value-card p { color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+    /* ===== TV SHOWCASE ===== */
+    .tv-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: center;
+      background: #fff;
+      border: 1.5px solid var(--line);
+      border-radius: 30px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .tv-showcase::before {
+      content: "";
+      position: absolute;
+      right: -140px;
+      top: -140px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(220,38,38,.11), transparent 66%);
+      pointer-events: none;
+    }
+    .tv-showcase-content { position: relative; z-index: 2; }
+    .tv-showcase-content h3 {
+      font-size: clamp(28px, 3.5vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+    .tv-showcase-content p { color: var(--muted); line-height: 1.8; font-size: 15px; margin-bottom: 26px; }
+    .tv-highlights { display: grid; gap: 10px; margin-bottom: 28px; }
+    .tv-highlights div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 46px;
+      padding: 0 16px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: #333;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.03);
+    }
+    .tv-highlights i { color: var(--red); font-size: 17px; width: 20px; text-align: center; }
+    .tv-showcase-image {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+    }
+    .tv-showcase-image::before {
+      content: "";
+      position: absolute;
+      inset: 40px;
+      border-radius: 50%;
+      background: rgba(220,38,38,.08);
+      filter: blur(24px);
+    }
+    .tv-showcase-image img {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 500px);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 26px 32px rgba(0,0,0,.16));
+      transform: rotate(-2deg);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .contact-card {
+      background: #fff;
+      border: 1.5px solid var(--line);
+      border-radius: 24px;
+      padding: 34px 26px;
+      text-align: center;
+      box-shadow: 0 16px 44px rgba(0,0,0,.05);
+      transition: transform .25s ease, box-shadow .25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact-card:hover { transform: translateY(-6px); box-shadow: 0 24px 58px rgba(0,0,0,.09); }
+    .contact-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 16px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--red-soft);
+      color: var(--red);
+      font-size: 24px;
+    }
+    .contact-card h3 { color: var(--red); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+    .contact-card p { color: #333; font-weight: 700; line-height: 1.55; margin-bottom: 20px; flex: 1; }
+
+    /* ===== CTA BOX ===== */
+    .cta-box {
+      margin-top: 50px;
+      background: linear-gradient(135deg, var(--red), #b91c1c);
+      color: #fff;
+      border-radius: 28px;
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      box-shadow: var(--shadow-red);
+      overflow: hidden;
+      position: relative;
+    }
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -110px;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+    }
+    .cta-box h3 { font-size: clamp(26px, 3.5vw, 38px); line-height: 1.1; letter-spacing: -1.2px; font-weight: 900; margin-bottom: 8px; }
+    .cta-box p { color: rgba(255,255,255,.78); font-size: 15px; }
+
+    /* ===== CONTRACTS PAGE ===== */
+    .contracts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .contract-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 32px;
+      border: 1.5px solid var(--line);
+      box-shadow: 0 16px 38px rgba(0,0,0,.05);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .contract-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 58px rgba(220,38,38,.11);
+      border-color: rgba(220,38,38,.22);
+    }
+    .contract-icon {
+      width: 66px;
+      height: 66px;
+      border-radius: 18px;
+      background: var(--red-soft);
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 22px;
+    }
+    .contract-card h3 { font-size: 21px; font-weight: 800; margin-bottom: 14px; }
+    .contract-card p { color: var(--muted); line-height: 1.8; }
+    .contracts-info {
+      margin-top: 40px;
+      background: #111;
+      color: #fff;
+      border-radius: 28px;
+      padding: 50px;
+      text-align: center;
+      box-shadow: var(--shadow-red);
+    }
+    .contracts-info h3 { font-size: 32px; font-weight: 900; margin-bottom: 18px; }
+    .contracts-info p { color: rgba(255,255,255,.72); max-width: 760px; margin: auto; line-height: 1.8; }
+    .contracts-contact {
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    .contracts-contact div { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+
+    /* ===== TV MODAL ===== */
+    .tv-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+    .tv-modal.active { display: flex; }
+    .tv-modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.75);
+      backdrop-filter: blur(8px);
+    }
+    .tv-modal-content {
+      position: relative;
+      z-index: 2;
+      width: min(620px, 100%);
+      max-height: 85vh;
+      animation: modalFade .28s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tv-modal-content img {
+      width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 22px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.44);
+    }
+    .tv-modal-close {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--red);
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 16px 38px rgba(0,0,0,.20);
+      transition: transform .25s ease;
+      border: none;
+      display: grid;
+      place-items: center;
+    }
+    .tv-modal-close:hover { transform: rotate(90deg); }
+    @keyframes modalFade {
+      from { opacity: 0; transform: scale(.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #111;
+      color: #fff;
+      padding-top: 62px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      padding-bottom: 52px;
+    }
+    .footer-logo {
+      width: 100%;
+      max-width: 115px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    .footer-brand p { color: #808080; line-height: 1.75; font-size: 13px; margin: 20px 0; }
+    .footer-col h4 { color: var(--red); font-size: 12px; text-transform: uppercase; letter-spacing: .12em; font-weight: 900; margin-bottom: 18px; }
+    .footer-col a,
+    .footer-col button,
+    .footer-col p {
+      display: block;
+      color: #aaa;
+      background: none;
+      text-align: left;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 9px;
+      transition: color .2s, transform .2s;
+      cursor: pointer;
+    }
+    .footer-col a:hover,
+    .footer-col button:hover { color: #fff; transform: translateX(3px); }
+    .socials { display: flex; gap: 10px; }
+    .social {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 17px;
+      transition: transform .2s ease;
+    }
+    .social:hover { transform: translateY(-3px); }
+    .social.whats { background: var(--whatsapp); }
+    .social.face { background: #1877f2; }
+    .social.insta { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .copyright {
+      border-top: 1px solid #222;
+      padding: 20px 0;
+      color: #666;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .copyright a:hover { color: #aaa; }
+
+    /* ===== FLOATING WA ===== */
+    .floating-wa {
+      position: fixed;
+      right: 26px;
+      bottom: 26px;
+      width: 62px;
+      height: 62px;
+      z-index: 1500;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      color: #fff;
+      box-shadow: 0 16px 36px rgba(37,211,102,.36);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      transition: transform .2s ease;
+      animation: waPulse 2.6s infinite;
+    }
+    .floating-wa:hover { transform: scale(1.08); animation: none; }
+    @keyframes waPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,.42); }
+      70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1200px) {
+      .hero-container { grid-template-columns: 1fr 560px; }
+      .mascot-wrapper { width: 460px; height: 490px; }
+      .plans-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-container { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .hero-content { margin: auto; }
+      .hero h1 { letter-spacing: -2.5px; }
+      .hero p { margin-inline: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { margin-inline: auto; }
+      .hero-mascot { justify-content: center; margin-left: 0px; }
+      .always-card { grid-template-columns: 1fr; }
+      .always-text { flex-direction: column; align-items: flex-start; }
+      .plan-featured { grid-template-columns: 1fr; max-width: 540px; }
+      .price-box { justify-self: start; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-menu, .nav-cta { display: none; }
+      .menu-toggle { display: flex; }
+      .topbar { display: none; }
+      .section { padding: 72px 0; }
+      .split { grid-template-columns: 1fr; gap: 38px; }
+      .split-media { min-height: 340px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .cta-box { padding: 32px 22px; flex-direction: column; align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .plans-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .tv-showcase { grid-template-columns: 1fr; padding: 28px 20px; gap: 24px; text-align: center; }
+      .tv-highlights div { justify-content: center; }
+      .tv-showcase-image { min-height: auto; }
+      .tv-showcase-image img { transform: none; width: min(100%, 380px); }
+      .contracts-grid { grid-template-columns: 1fr; }
+      .contracts-info { padding: 32px 22px; }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 26px, var(--container)); }
+      .hero { padding: 80px 0 60px; }
+      .hero h1 { font-size: 46px; letter-spacing: -2px; }
+      .hero p { font-size: 15px; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 48%; }
+      .always-card { padding: 22px; border-radius: 24px; }
+      .always-text { gap: 18px; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .copyright { flex-direction: column; }
+      .floating-wa { width: 56px; height: 56px; right: 18px; bottom: 18px; }
+      .section-title { margin-bottom: 36px; }
+      .cta-box .btn-white { width: 100%; justify-content: center; }
+      .brand img { height: 50px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span>São Francisco de Itabapoana/RJ • Internet Fibra Óptica e TV</span>
+      <div class="topbar-links">
+        <a href="tel:08000221020"><i class="fa-solid fa-headset"></i> 0800-022-1020</a>
+        <a href="https://wa.me/5522999555359" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> (22) 99955-5359</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-wrap">
+
+      <a href="#inicio" class="brand" aria-label="Alfa Internet e TV">
+        <img src="logo-alfa.png" alt="Alfa Internet e TV">
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Menu principal">
+        <a href="#inicio" data-section="inicio">Início</a>
+        <a href="#planos" data-section="planos">Planos</a>
+        <a href="#canais" data-section="canais">Canais</a>
+        <a href="#sobre" data-section="sobre">Sobre nós</a>
+        <a href="#contato" data-section="contato">Contato</a>
+      </nav>
+
+      <a class="btn btn-primary nav-cta" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20contratar%20um%20plano%20da%20Alfa." target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <i class="fa-solid fa-bars" id="menuIcon"></i>
+      </button>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menu mobile">
+
+  <a href="#inicio" data-section="inicio">
+    <i class="fa-solid fa-house"></i>
+    <span>Início</span>
+  </a>
+
+  <a href="#planos" data-section="planos">
+    <i class="fa-solid fa-wifi"></i>
+    <span>Planos</span>
+  </a>
+
+  <a href="#canais" data-section="canais">
+    <i class="fa-solid fa-tv"></i>
+    <span>Canais</span>
+  </a>
+
+  <a href="#sobre" data-section="sobre">
+    <i class="fa-solid fa-building"></i>
+    <span>Sobre nós</span>
+  </a>
+
+  <a href="#contato" data-section="contato">
+    <i class="fa-solid fa-headset"></i>
+    <span>Contato</span>
+  </a>
+
+  <a
+    class="mobile-whatsapp"
+    href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20contratar%20um%20plano%20da%20Alfa."
+    target="_blank"
+    rel="noopener"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Falar no WhatsApp</span>
+  </a>
+
+</div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div id="mainContent">
+
+      <!-- HERO -->
+      <section class="hero" id="inicio">
+        <div class="container hero-container">
+
+          <div class="hero-content">
+            <div class="eyebrow">
+              <span class="pulse-dot"></span>
+              100% Fibra Óptica • São Francisco de Itabapoana
+            </div>
+
+            <h1>Internet que não te <span>deixa na mão.</span></h1>
+
+            <p>Fibra óptica de alta performance com estabilidade de verdade. Há anos conectando famílias, empresas e histórias em São Francisco de Itabapoana.</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#planos">Ver planos <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn btn-outline" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos%20da%20Alfa." target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-mini"><strong>17+</strong><span>Anos de mercado</span></div>
+              <div class="stat-mini"><strong>800MB</strong><span>Velocidade máxima</span></div>
+              <div class="stat-mini"><strong>132</strong><span>Canais de TV e Rádio</span></div>
+            </div>
+          </div>
+
+          <div class="hero-mascot">
+            <div class="hero-mascot-glow"></div>
+            <div class="mascot-wrapper">
+              <img class="mascot-slide active" src="mascote-alfa-1.png" alt="Mascote Alfa">
+              <img class="mascot-slide" src="mascote-alfa-2.png" alt="Mascote Alfa">
+              <img class="mascot-slide" src="mascote-alfa-3.png" alt="Mascote Alfa">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ALWAYS ON -->
+      <section class="always-on reveal">
+        <div class="container">
+          <div class="always-card">
+            <div class="always-text">
+              <div class="always-logo">
+                <strong>ALFA</strong>
+                <span>SEMPRE ON</span>
+                <div class="always-badge">CONECTADO ATÉ QUANDO A LUZ ACABA</div>
+              </div>
+              <div class="always-copy">
+                <h2>Acabou a luz?</h2>
+                <p>Com o <strong>Alfa Sempre On</strong>, você continua conectado por até <strong>4 horas</strong>, mesmo sem energia elétrica.</p>
+              </div>
+            </div>
+
+            <div class="plan-featured">
+              <div>
+                <small>Plano destaque</small>
+                <div class="speed-big">
+                  <strong>450</strong>
+                  <span>MEGA</span>
+                </div>
+                <p style="font-weight:900;color:#fff;">ALFA SEMPRE ON + WI-FI 5G GRÁTIS</p>
+              </div>
+              <div>
+                <div class="price-box">
+                  <div class="price-content">
+                    <span class="currency">R$</span>
+                    <span class="amount">99</span>
+                    <span class="cents">,90</span>
+                    <span class="month">/MÊS</span>
+                  </div>
+                </div>
+                <a class="always-on-btn" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20ALFA%20SEMPRE%20ON%20%2B%20WI-FI%205G%20GR%C3%81TIS." target="_blank" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Saiba mais
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANOS -->
+      <section class="section section-soft" id="planos">
+        <div class="container">
+          <div class="section-title reveal">
+            <span class="label">Planos Alfa</span>
+            <h2>Escolha o plano ideal para sua rotina</h2>
+            <p>Planos com fibra óptica, instalação facilitada, suporte local e velocidade para streaming, jogos, trabalho e TV.</p>
+          </div>
+
+          <div class="plans-grid">
+            <article class="plan-card reveal">
+              <div class="plan-speed"><strong>250</strong><span>MEGA</span></div>
+              <div class="plan-price"><small>R$</small><strong>79</strong><span>,90</span><em>/mês</em></div>
+              <ul class="features">
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação grátis*</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação imediata</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Suporte 24h</li>
+              </ul>
+              <a class="btn btn-outline" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20250%20Mega%20da%20Alfa." target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Assinar agora
+              </a>
+            </article>
+
+            <article class="plan-card popular reveal">
+              <span class="tag">MAIS POPULAR</span>
+              <div class="plan-speed"><strong>350</strong><span>MEGA</span></div>
+              <div class="plan-price"><small>R$</small><strong>89</strong><span>,90</span><em>/mês</em></div>
+              <ul class="features">
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 5G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Baixa latência game</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Melhor upload</li>
+              </ul>
+              <a class="btn btn-primary" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20350%20Mega%20da%20Alfa." target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Assinar agora
+              </a>
+            </article>
+
+            <article class="plan-card reveal">
+              <span class="tag">COM TV</span>
+              <div class="plan-speed"><strong>450</strong><span>MEGA</span></div>
+              <div class="plan-price"><small>R$</small><strong>99</strong><span>,90</span><em>/mês</em></div>
+              <ul class="features">
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>80 canais de TV</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 5G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Baixa latência game</li>
+              </ul>
+              <a class="btn btn-outline" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20450%20Mega%20da%20Alfa." target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Assinar agora
+              </a>
+            </article>
+
+            <article class="plan-card reveal">
+              <span class="tag">COM TV</span>
+              <div class="plan-speed"><strong>700</strong><span>MEGA</span></div>
+              <div class="plan-price"><small>R$</small><strong>119</strong><span>,90</span><em>/mês</em></div>
+              <ul class="features">
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>80 canais de TV</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 5G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Baixa latência game</li>
+              </ul>
+              <a class="btn btn-outline" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20700%20Mega%20da%20Alfa." target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Assinar agora
+              </a>
+            </article>
+
+            <article class="plan-card reveal">
+              <span class="tag">PREMIUM</span>
+              <div class="plan-speed"><strong>800</strong><span>MEGA</span></div>
+              <div class="plan-price"><small>R$</small><strong>149</strong><span>,90</span><em>/mês</em></div>
+              <ul class="features">
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>80 canais de TV</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 5G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Baixa latência game</li>
+              </ul>
+              <a class="btn btn-outline" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20800%20Mega%20da%20Alfa." target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Assinar agora
+              </a>
+            </article>
+          </div>
+
+          <p style="text-align:center;margin-top:24px;color:#9ca3af;font-size:12px;">*Sujeito à viabilidade técnica e condições comerciais.</p>
+        </div>
+      </section>
+
+      <!-- STATS STRIP -->
+      <section class="stats-strip reveal">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item"><strong>17+</strong><span>Anos no mercado</span></div>
+            <div class="stat-item"><strong>132</strong><span>Canais de TV e rádio</span></div>
+            <div class="stat-item"><strong>800M</strong><span>Velocidade máxima</span></div>
+            <div class="stat-item"><strong>24h</strong><span>Suporte técnico</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISSÃO / VALORES -->
+      <section class="section section-soft">
+        <div class="container split">
+          <div class="values-list reveal">
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-bullseye"></i></div>
+              <div>
+                <h3>Missão</h3>
+                <p>Fornecer serviços de conexão com tecnologia, qualidade, agilidade e preço justo, facilitando relações pessoais e empresariais.</p>
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-eye"></i></div>
+              <div>
+                <h3>Visão</h3>
+                <p>Ser reconhecida como a melhor empresa prestadora de serviços e soluções em internet do município de São Francisco de Itabapoana.</p>
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><i class="fa-solid fa-gem"></i></div>
+              <div>
+                <h3>Valores</h3>
+                <p>Satisfação dos clientes, competitividade, inovação tecnológica, comprometimento, agilidade e confiabilidade.</p>
+              </div>
+            </div>
+          </div>
+          <div class="split-text reveal">
+            <span class="label">Nossa essência</span>
+            <h2>Tecnologia com proximidade e atendimento local</h2>
+            <p>A Alfa une velocidade, estabilidade e suporte humanizado para entregar uma experiência melhor para residências, empresas e toda a região.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CANAIS -->
+      <section class="section" id="canais">
+        <div class="container">
+          <div class="section-title reveal">
+            <span class="label">Alfa TV</span>
+            <h2><span class="highlight-number">132</span> canais disponíveis</h2>
+            <p>Sendo <strong>113 canais de TV</strong> e <strong>19 canais de rádio</strong>, com opções de entretenimento, filmes, esportes, notícias e conteúdo para toda a família.</p>
+          </div>
+
+          <div class="tv-showcase reveal">
+            <div class="tv-showcase-content">
+              <span class="label">Alfa TV</span>
+              <h3>Os canais que você mais assiste, juntos em um só lugar.</h3>
+              <p>Filmes, esportes, notícias, desenhos, séries e entretenimento para toda a família. A Alfa TV deixa sua casa mais completa, com uma experiência simples, moderna e integrada ao seu plano.</p>
+              <div class="tv-highlights">
+                <div><i class="fa-solid fa-tv"></i> +80 canais disponíveis</div>
+                <div><i class="fa-solid fa-users"></i> Conteúdo para toda família</div>
+                <div><i class="fa-solid fa-wifi"></i> Internet + TV no mesmo plano</div>
+              </div>
+              <a class="btn btn-primary" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20planos%20com%20TV%20da%20Alfa." target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Quero um plano com TV
+              </a>
+            </div>
+            <div class="tv-showcase-image">
+              <img src="canais-tv.png" alt="Canais disponíveis na Alfa TV">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section class="section" id="sobre">
+        <div class="container split">
+          <div class="split-text reveal">
+            <span class="label">Sobre nós</span>
+            <h2>Conectando São Francisco de Itabapoana desde 2008</h2>
+            <p>Somos uma empresa especializada em internet e TV. Atuamos de forma íntegra e objetiva, conquistando o respeito e a confiança dos nossos clientes.</p>
+            <p style="margin-top:14px;">Hoje somos referência em tecnologia e conexão para nossa cidade e região, com atendimento próximo, suporte ágil e estrutura preparada para entregar qualidade.</p>
+            <div class="hero-actions" style="margin-top:30px;margin-bottom:0;">
+              <a class="btn btn-primary" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Alfa." target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Fale conosco
+              </a>
+              <a class="btn btn-outline" href="https://alfatelecomunicacoes.tv.br/central_assinante_web/login" target="_blank" rel="noopener">
+                <i class="fa-solid fa-user"></i> Central do cliente
+              </a>
+            </div>
+          </div>
+          <div class="split-media reveal">
+            <div class="media-card">
+              <strong>Alfa Internet e TV</strong>
+              <p>Internet feita por quem conhece São Francisco de Itabapoana e entende a rotina da cidade.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="section section-soft" id="contato">
+        <div class="container">
+          <div class="section-title reveal">
+            <span class="label">Contato</span>
+            <h2>Como nos encontrar</h2>
+            <p>Estamos prontos para atender você com suporte local e canais rápidos de atendimento.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card reveal">
+              <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <h3>WhatsApp</h3>
+              <p>(22) 99955-5359</p>
+              <a class="btn btn-outline" href="https://wa.me/5522999555359" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Enviar mensagem
+              </a>
+            </div>
+            <div class="contact-card reveal">
+              <div class="contact-icon"><i class="fa-solid fa-headset"></i></div>
+              <h3>0800 Gratuito</h3>
+              <p>0800-022-1020</p>
+              <a class="btn btn-outline" href="tel:08000221020">
+                <i class="fa-solid fa-phone"></i> Ligar agora
+              </a>
+            </div>
+            <div class="contact-card reveal">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <h3>Endereço</h3>
+              <p>Rua Lions Club, 2 — Centro, São Francisco de Itabapoana/RJ</p>
+              <a class="btn btn-outline" href="https://maps.google.com/?q=Rua+Lions+Club+2+São+Francisco+de+Itabapoana+RJ" target="_blank" rel="noopener">
+                <i class="fa-solid fa-location-dot"></i> Ver no mapa
+              </a>
+            </div>
+          </div>
+
+          <div class="cta-box reveal">
+            <div>
+              <h3>Pronto para se conectar?</h3>
+              <p>Assine agora e tenha internet rápida, estável e com atendimento de verdade.</p>
+            </div>
+            <a class="btn-white" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Quero%20assinar%20um%20plano%20da%20Alfa." target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> Assinar via WhatsApp →
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /mainContent -->
+
+    <!-- ===== CONTRACTS PAGE ===== -->
+    <section class="section section-soft" id="contractsPage" style="display:none;min-height:70vh;">
+      <div class="container">
+
+        <div class="section-title">
+          <span class="label">Contratos e Regulamentos</span>
+          <h2>Documentos e informações importantes</h2>
+          <p>Bem-vindo à página de Contratos e Regulamentos da ALFA INTERNET E TV. Aqui você encontrará os documentos que regem o uso dos nossos serviços.</p>
+        </div>
+
+        <div class="contracts-grid">
+          <div class="contract-card">
+            <div class="contract-icon"><i class="fa-solid fa-file-contract"></i></div>
+            <h3>Termos e Condições Gerais de Uso</h3>
+            <p>Este documento descreve os termos e condições gerais para o uso dos serviços da ALFA INTERNET E TV. Ao utilizar nossos serviços, você concorda com os termos descritos.</p>
+          </div>
+          <div class="contract-card">
+            <div class="contract-icon"><i class="fa-solid fa-wifi"></i></div>
+            <h3>Contrato de Prestação de Serviços de Internet</h3>
+            <p>Especifica as obrigações e responsabilidades da ALFA INTERNET E TV e do cliente na prestação dos serviços, incluindo planos, preços, pagamento e cancelamento.</p>
+          </div>
+          <div class="contract-card">
+            <div class="contract-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3>Regulamento de Serviços</h3>
+            <p>Estabelece normas e procedimentos para prestação dos serviços, abordando qualidade, suporte técnico e direitos e deveres do consumidor.</p>
+          </div>
+          <div class="contract-card">
+            <div class="contract-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Política de Uso Aceitável</h3>
+            <p>Define as práticas aceitáveis e proibidas ao utilizar os serviços da ALFA INTERNET E TV, incluindo diretrizes sobre uso responsável, segurança e privacidade.</p>
+          </div>
+        </div>
+
+        <div class="contracts-info">
+          <h3>Alterações nos Contratos e Regulamentos</h3>
+          <p>A ALFA INTERNET E TV pode atualizar seus contratos e regulamentos periodicamente. Notificaremos os clientes sobre quaisquer mudanças significativas.</p>
+          <div class="contracts-contact">
+            <div><i class="fa-solid fa-envelope"></i> alfatelecomunicacoes@gmail.com</div>
+            <div><i class="fa-brands fa-whatsapp"></i> (22) 99955-5359</div>
+          </div>
+          <a class="btn btn-primary" style="min-width:300px;" href="contrato.pdf" download>
+            <i class="fa-solid fa-download"></i> CLIQUE E BAIXE O CONTRATO
+          </a>
+          <br><br>
+          <button class="btn btn-outline" id="backToSite" type="button">
+            <i class="fa-solid fa-arrow-left"></i> Voltar ao site
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TV MODAL -->
+  <div class="tv-modal" id="tvModal" role="dialog" aria-modal="true" aria-label="Grade de canais Alfa TV">
+    <div class="tv-modal-overlay"></div>
+    <div class="tv-modal-content">
+      <button class="tv-modal-close" id="closeTvModal" aria-label="Fechar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="Grade.png" alt="Grade de canais Alfa TV">
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img src="logo-alfa.png" alt="Alfa Internet e TV" class="footer-logo">
+        <p>W. G. Da Silva Serviços em Telecomunicações<br>CNPJ 09.308.953/0001-96</p>
+        <div class="socials">
+          <a class="social whats" href="https://wa.me/5522999555359" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a class="social face" href="https://www.facebook.com/alfatelecomsfi" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a class="social insta" href="https://www.instagram.com/alfa_telecomunicacoes/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <a href="#inicio" data-section="inicio">Início</a>
+        <a href="#planos" data-section="planos">Planos</a>
+        <a href="#sobre" data-section="sobre">Sobre nós</a>
+        <a href="#canais" data-section="canais">Canais</a>
+        <a href="#contato" data-section="contato">Contato</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links úteis</h4>
+        <a href="https://alfatelecomunicacoes.tv.br/central_assinante_web/login" target="_blank" rel="noopener">
+          <i class="fa-solid fa-user"></i> Central do cliente
+        </a>
+        <a href="https://www.speedtest.net/" target="_blank" rel="noopener">Teste de velocidade</a>
+        <button data-contracts-link type="button">Contrato e Regulamentos</button>
+        <button id="openTvModal" type="button">Alfa TV</button>
+      </div>
+
+      <div class="footer-col">
+        <h4>Atendimento</h4>
+        <a href="https://wa.me/5522999555359" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> (22) 99955-5359
+        </a>
+        <a href="tel:08000221020">
+          <i class="fa-solid fa-headset"></i> 0800-022-1020
+        </a>
+        <p>Rua Lions Club, 2 — Centro<br>São Francisco de Itabapoana/RJ</p>
+      </div>
+
+    </div>
+
+    <div class="container copyright">
+      <span>© 2026 Alfa Internet e TV. Todos os direitos reservados.</span>
+      <a href="https://www.speedtest.net/" target="_blank" rel="noopener">Teste sua velocidade →</a>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA -->
+  <a class="floating-wa" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos%20da%20Alfa." target="_blank" rel="noopener" aria-label="Falar com a Alfa pelo WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+  (() => {
+    'use strict';
+
+    /* ─── ELEMENTS ─── */
+    const navbar     = document.getElementById('navbar');
+    const menuToggle = document.getElementById('menuToggle');
+    const menuIcon   = document.getElementById('menuIcon');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mainContent   = document.getElementById('mainContent');
+    const contractsPage = document.getElementById('contractsPage');
+    const backToSite    = document.getElementById('backToSite');
+    const tvModal      = document.getElementById('tvModal');
+    const openTvModal  = document.getElementById('openTvModal');
+    const closeTvModal = document.getElementById('closeTvModal');
+
+    /* ─── NAVBAR SCROLL SHADOW ─── */
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('is-scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ─── MOBILE MENU TOGGLE ─── */
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuIcon.className = 'fa-solid fa-bars';
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+
+    /* ─── ACTIVE NAV LINK MANAGEMENT ─── */
+    // All nav links that point to a section (both desktop and mobile)
+    const allNavLinks = document.querySelectorAll('[data-section]');
+
+    function setActiveSection(sectionId) {
+      allNavLinks.forEach(link => {
+        const target = link.getAttribute('data-section');
+        link.classList.toggle('active', target === sectionId);
+      });
+    }
+
+    /* ─── SCROLL SPY ─── */
+    const sections = document.querySelectorAll('#mainContent section[id]');
+    let isScrollSpyPaused = false;
+
+    function runScrollSpy() {
+      if (isScrollSpyPaused) return;
+      if (contractsPage.style.display === 'block') return;
+
+      let current = 'inicio';
+      const scrollY = window.scrollY + (window.innerHeight * 0.35);
+
+      sections.forEach(section => {
+        if (section.offsetTop <= scrollY) {
+          current = section.id;
+        }
+      });
+
+      setActiveSection(current);
+    }
+
+    window.addEventListener('scroll', runScrollSpy, { passive: true });
+
+    /* ─── NAV LINK CLICK ─── */
+    allNavLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        const sectionId = link.getAttribute('data-section');
+        const href = link.getAttribute('href') || `#${sectionId}`;
+
+        // If contracts page is visible, hide it first
+        if (contractsPage.style.display === 'block') {
+          contractsPage.style.display = 'none';
+          mainContent.style.display = 'block';
+        }
+
+        // Update active immediately on click
+        setActiveSection(sectionId);
+
+        // Pause scroll spy briefly to avoid flickering
+        isScrollSpyPaused = true;
+        setTimeout(() => { isScrollSpyPaused = false; }, 1200);
+
+        closeMobileMenu();
+
+        // Smooth scroll to target
+        const target = document.getElementById(sectionId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    /* ─── CONTRACTS PAGE ─── */
+    function showContracts(e) {
+      if (e) e.preventDefault();
+      mainContent.style.display = 'none';
+      contractsPage.style.display = 'block';
+
+      // Remove active from all nav links
+      allNavLinks.forEach(l => l.classList.remove('active'));
+      document.querySelectorAll('[data-contracts-link]').forEach(l => l.classList.add('active'));
+
+      closeMobileMenu();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function hideContracts(e) {
+      if (e) e.preventDefault();
+      contractsPage.style.display = 'none';
+      mainContent.style.display = 'block';
+      document.querySelectorAll('[data-contracts-link]').forEach(l => l.classList.remove('active'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Re-run scroll spy
+      setTimeout(runScrollSpy, 100);
+    }
+
+    document.querySelectorAll('[data-contracts-link]').forEach(link => {
+      link.addEventListener('click', showContracts);
+    });
+
+    if (backToSite) backToSite.addEventListener('click', hideContracts);
+
+    /* ─── TV MODAL ─── */
+    function openModal() { tvModal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeModal() { tvModal.classList.remove('active'); document.body.style.overflow = ''; }
+
+    if (openTvModal) openTvModal.addEventListener('click', e => { e.preventDefault(); openModal(); });
+    if (closeTvModal) closeTvModal.addEventListener('click', closeModal);
+    tvModal.querySelector('.tv-modal-overlay').addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    /* ─── MASCOT SLIDER ─── */
+    const mascots = document.querySelectorAll('.mascot-slide');
+    let currentMascot = 0;
+    if (mascots.length > 1) {
+      setInterval(() => {
+        mascots[currentMascot].classList.remove('active');
+        currentMascot = (currentMascot + 1) % mascots.length;
+        mascots[currentMascot].classList.add('active');
+      }, 4000);
+    }
+
+    /* ─── REVEAL ON SCROLL ─── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ─── INIT ─── */
+    // Set initial active section on page load
+    runScrollSpy();
+
+  })();
+  </script>
+</body>
+</html>
