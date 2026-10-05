@@ -31,6 +31,260 @@
       --nav-height: 78px;
     }
 
+    /* ==================================================
+   ALFA TV / ENTRETENIMENTO
+================================================== */
+
+.tv-entertainment {
+  position: relative;
+  width: 100%;
+  padding: 18px 0 6px;
+}
+
+.tv-entertainment-header {
+  max-width: 850px;
+  margin-bottom: 42px;
+}
+
+.tv-entertainment-header h3 {
+  margin: 0;
+  max-width: 800px;
+
+  font-size: clamp(38px, 4.8vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+  font-weight: 900;
+
+  color: var(--text);
+}
+
+.tv-entertainment-header h3 span {
+  color: var(--red);
+}
+
+.tv-entertainment-header p {
+  max-width: 650px;
+  margin-top: 18px;
+
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+
+/* CARROSSEL */
+
+.tv-carousel-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.tv-carousel {
+  display: flex;
+  gap: 22px;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  padding: 8px 4px 22px;
+
+  scrollbar-width: none;
+}
+
+.tv-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* BANNERS */
+
+.tv-banner-card {
+  position: relative;
+
+  flex: 0 0 275px;
+
+  aspect-ratio: 3 / 4;
+
+  border-radius: 24px;
+  overflow: hidden;
+
+  background: #f4f4f5;
+
+  box-shadow:
+    0 16px 38px rgba(0,0,0,.08);
+
+  scroll-snap-align: start;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.tv-banner-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 26px 55px rgba(0,0,0,.13);
+}
+
+.tv-banner-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* SETAS */
+
+.tv-carousel-arrow {
+  position: absolute;
+  top: 50%;
+
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--red);
+  color: #fff;
+
+  font-size: 18px;
+
+  box-shadow:
+    0 12px 30px rgba(220,38,38,.30);
+
+  z-index: 10;
+
+  transform: translateY(-50%);
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.tv-carousel-arrow:hover {
+  background: #b91c1c;
+}
+
+.tv-carousel-prev {
+  left: -27px;
+}
+
+.tv-carousel-next {
+  right: -27px;
+}
+
+.tv-carousel-prev:hover {
+  transform: translateY(-50%) translateX(-3px);
+}
+
+.tv-carousel-next:hover {
+  transform: translateY(-50%) translateX(3px);
+}
+
+
+/* CTA */
+
+.tv-entertainment-action {
+  margin-top: 18px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .tv-entertainment-header {
+    margin-bottom: 30px;
+  }
+
+  .tv-entertainment-header h3 {
+    font-size: clamp(36px, 7vw, 52px);
+  }
+
+  .tv-banner-card {
+    flex-basis: 235px;
+  }
+
+  .tv-carousel-arrow {
+    width: 48px;
+    height: 48px;
+  }
+
+  .tv-carousel-prev {
+    left: 8px;
+  }
+
+  .tv-carousel-next {
+    right: 8px;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .tv-entertainment {
+    padding-top: 5px;
+  }
+
+  .tv-entertainment-header {
+    margin-bottom: 24px;
+  }
+
+  .tv-entertainment-header h3 {
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+  }
+
+  .tv-entertainment-header p {
+    font-size: 14px;
+  }
+
+  .tv-carousel {
+    gap: 14px;
+    padding-right: 32px;
+  }
+
+  .tv-banner-card {
+    flex: 0 0 72vw;
+    max-width: 270px;
+    border-radius: 20px;
+  }
+
+  .tv-carousel-arrow {
+    width: 44px;
+    height: 44px;
+
+    font-size: 15px;
+  }
+
+  .tv-carousel-prev {
+    left: 7px;
+  }
+
+  .tv-carousel-next {
+    right: 7px;
+  }
+
+  .tv-entertainment-action .btn {
+    width: 100%;
+  }
+}
+
     /* ===== RESET ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -1715,7 +1969,7 @@
               <div class="always-logo">
                 <strong>ALFA</strong>
                 <span>SEMPRE ON</span>
-                <div class="always-badge">CONECTADO ATÉ QUANDO A LUZ ACABA</div>
+                <div class="always-badge">CONECTADO ATÉ QUANDO A ENERGIA ACABA</div>
               </div>
               <div class="always-copy">
                 <h2>Acabou a luz?</h2>
@@ -1765,9 +2019,11 @@
               <div class="plan-price"><small>R$</small><strong>79</strong><span>,90</span><em>/mês</em></div>
               <ul class="features">
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 5g comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Alfaler (livros e revistas digitais)</li>
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação grátis*</li>
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação imediata</li>
-                <li><span class="check"><i class="fa-solid fa-check"></i></span>Suporte 24h</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Sujeito viabilidade técnica</li>
               </ul>
               <a class="btn btn-outline" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20250%20Mega%20da%20Alfa." target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i> Assinar agora
@@ -1781,8 +2037,12 @@
               <ul class="features">
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 5G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Alfaler (livros e revistas digitais)</li>
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Baixa latência game</li>
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Melhor upload</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação grátis*</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação imediata</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Sujeito viabilidade técnica</li>
               </ul>
               <a class="btn btn-primary" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20350%20Mega%20da%20Alfa." target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i> Assinar agora
@@ -1790,14 +2050,18 @@
             </article>
 
             <article class="plan-card reveal">
-              <span class="tag">COM TV</span>
+              <span class="tag">450 MEGA</span>
               <div class="plan-speed"><strong>450</strong><span>MEGA</span></div>
               <div class="plan-price"><small>R$</small><strong>99</strong><span>,90</span><em>/mês</em></div>
               <ul class="features">
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
-                <li><span class="check"><i class="fa-solid fa-check"></i></span>80 canais de TV</li>
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 5G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Alfaler (livros e revistas digitais)</li>
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Baixa latência game</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Melhor upload</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação grátis*</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação imediata</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Sujeito viabilidade técnica</li>
               </ul>
               <a class="btn btn-outline" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20450%20Mega%20da%20Alfa." target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i> Assinar agora
@@ -1805,14 +2069,18 @@
             </article>
 
             <article class="plan-card reveal">
-              <span class="tag">COM TV</span>
+              <span class="tag">700 MEGA</span>
               <div class="plan-speed"><strong>700</strong><span>MEGA</span></div>
               <div class="plan-price"><small>R$</small><strong>119</strong><span>,90</span><em>/mês</em></div>
               <ul class="features">
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
-                <li><span class="check"><i class="fa-solid fa-check"></i></span>80 canais de TV</li>
-                <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 5G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 6G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Alfaler (livros e revistas digitais)</li>
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Baixa latência game</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Melhor upload</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação grátis*</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação imediata</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Sujeito viabilidade técnica</li>
               </ul>
               <a class="btn btn-outline" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20700%20Mega%20da%20Alfa." target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i> Assinar agora
@@ -1825,9 +2093,13 @@
               <div class="plan-price"><small>R$</small><strong>149</strong><span>,90</span><em>/mês</em></div>
               <ul class="features">
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Fibra Óptica 100%</li>
-                <li><span class="check"><i class="fa-solid fa-check"></i></span>80 canais de TV</li>
-                <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 5G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Wi-Fi 6G comodato</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Alfaler (livros e revistas digitais)</li>
                 <li><span class="check"><i class="fa-solid fa-check"></i></span>Baixa latência game</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Melhor upload</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação grátis*</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Instalação imediata</li>
+                <li><span class="check"><i class="fa-solid fa-check"></i></span>Sujeito viabilidade técnica</li>
               </ul>
               <a class="btn btn-outline" style="width:100%;" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20800%20Mega%20da%20Alfa." target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i> Assinar agora
@@ -1839,7 +2111,7 @@
         </div>
       </section>
 
-      <!-- STATS STRIP -->
+      <!-- STATS STRIP
       <section class="stats-strip reveal">
         <div class="container">
           <div class="stats-grid">
@@ -1849,7 +2121,7 @@
             <div class="stat-item"><strong>24h</strong><span>Suporte técnico</span></div>
           </div>
         </div>
-      </section>
+      </section>-->
 
       <!-- MISSÃO / VALORES -->
       <section class="section section-soft">
@@ -1888,30 +2160,115 @@
       <!-- CANAIS -->
       <section class="section" id="canais">
         <div class="container">
-          <div class="section-title reveal">
-            <span class="label">Alfa TV</span>
-            <h2><span class="highlight-number">132</span> canais disponíveis</h2>
-            <p>Sendo <strong>113 canais de TV</strong> e <strong>19 canais de rádio</strong>, com opções de entretenimento, filmes, esportes, notícias e conteúdo para toda a família.</p>
-          </div>
+          
 
-          <div class="tv-showcase reveal">
-            <div class="tv-showcase-content">
-              <span class="label">Alfa TV</span>
-              <h3>Os canais que você mais assiste, juntos em um só lugar.</h3>
-              <p>Filmes, esportes, notícias, desenhos, séries e entretenimento para toda a família. A Alfa TV deixa sua casa mais completa, com uma experiência simples, moderna e integrada ao seu plano.</p>
-              <div class="tv-highlights">
-                <div><i class="fa-solid fa-tv"></i> +80 canais disponíveis</div>
-                <div><i class="fa-solid fa-users"></i> Conteúdo para toda família</div>
-                <div><i class="fa-solid fa-wifi"></i> Internet + TV no mesmo plano</div>
-              </div>
-              <a class="btn btn-primary" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20planos%20com%20TV%20da%20Alfa." target="_blank" rel="noopener">
-                <i class="fa-brands fa-whatsapp"></i> Quero um plano com TV
-              </a>
-            </div>
-            <div class="tv-showcase-image">
-              <img src="canais-tv.png" alt="Canais disponíveis na Alfa TV">
-            </div>
-          </div>
+          <!-- ===== ENTRETENIMENTO / ALFA TV ===== -->
+<div class="tv-entertainment reveal">
+
+  <div class="tv-entertainment-header">
+
+    <h3>
+      Adicione entretenimento ao seu
+      <span>Plano de Internet!</span>
+    </h3>
+
+    <p>
+      Escolha os conteúdos que combinam com você e deixe seu plano Alfa
+      ainda mais completo.
+    </p>
+  </div>
+
+  <div class="tv-carousel-wrap">
+
+    <button
+      class="tv-carousel-arrow tv-carousel-prev"
+      type="button"
+      aria-label="Anterior"
+    >
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="tv-carousel" id="tvEntertainmentCarousel">
+
+      <!-- BANNER 1 -->
+      <article class="tv-banner-card">
+        <img
+          src="banner1.png"
+          alt=""
+          loading="lazy"
+        >
+      </article>
+
+      <!-- BANNER 2 -->
+      <article class="tv-banner-card">
+        <img
+          src="banner2.png"
+          alt=""
+          loading="lazy"
+        >
+      </article>
+
+      <!-- BANNER 3 -->
+      <article class="tv-banner-card">
+        <img
+          src="banner3.png"
+          alt=""
+          loading="lazy"
+        >
+      </article>
+
+      <!-- BANNER 4 -->
+      <article class="tv-banner-card">
+        <img
+          src="banner4.png"
+          alt=""
+          loading="lazy"
+        >
+      </article>
+
+      <!-- BANNER 5 -->
+      <article class="tv-banner-card">
+        <img
+          src="banner5.png"
+          alt=""
+          loading="lazy"
+        >
+      </article>
+
+      <!-- BANNER 6 -->
+      <article class="tv-banner-card">
+        <img
+          src="banner6.png"
+          alt=""
+          loading="lazy"
+        >
+      </article>
+
+    </div>
+
+    <button
+      class="tv-carousel-arrow tv-carousel-next"
+      type="button"
+      aria-label="Próximo"
+    >
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+  </div>
+
+  <div class="tv-entertainment-action">
+    <a
+      class="btn btn-primary"
+      href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20planos%20com%20TV%20e%20entretenimento%20da%20Alfa."
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+      Quero adicionar entretenimento
+    </a>
+  </div>
+
+</div>
         </div>
       </section>
 
@@ -2347,6 +2704,51 @@
       if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
+
+
+    /* ─── CARROSSEL DE ENTRETENIMENTO ─── */
+
+const entertainmentCarousel =
+  document.getElementById('tvEntertainmentCarousel');
+
+const entertainmentPrev =
+  document.querySelector('.tv-carousel-prev');
+
+const entertainmentNext =
+  document.querySelector('.tv-carousel-next');
+
+function moveEntertainmentCarousel(direction) {
+
+  if (!entertainmentCarousel) return;
+
+  const card =
+    entertainmentCarousel.querySelector('.tv-banner-card');
+
+  if (!card) return;
+
+  const gap = 22;
+
+  const distance =
+    card.getBoundingClientRect().width + gap;
+
+  entertainmentCarousel.scrollBy({
+    left: direction * distance,
+    behavior: 'smooth'
+  });
+}
+
+if (entertainmentPrev) {
+  entertainmentPrev.addEventListener('click', () => {
+    moveEntertainmentCarousel(-1);
+  });
+}
+
+if (entertainmentNext) {
+  entertainmentNext.addEventListener('click', () => {
+    moveEntertainmentCarousel(1);
+  });
+}
+
 
     function scheduleAlfaLerPopup() {
       window.setTimeout(showAlfaLerPopup, 4000);
