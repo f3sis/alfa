@@ -1532,27 +1532,56 @@
     }
 
     @media (max-width: 900px) {
-      .nav-menu, .nav-cta { display: none; }
-      .menu-toggle { display: flex; }
-      .topbar { display: none; }
-      .section { padding: 72px 0; }
-      .split { grid-template-columns: 1fr; gap: 38px; }
-      .split-media { min-height: 340px; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .cta-box { padding: 32px 22px; flex-direction: column; align-items: flex-start; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .plans-grid { grid-template-columns: repeat(2, 1fr); }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .tv-showcase { grid-template-columns: 1fr; padding: 28px 20px; gap: 24px; text-align: center; }
-      .tv-highlights div { justify-content: center; }
-      .tv-showcase-image { min-height: auto; }
-      .tv-showcase-image img { transform: none; width: min(100%, 380px); }
-      .contracts-grid { grid-template-columns: 1fr; }
-      .contracts-info { padding: 32px 22px; }
-      .alfa-ler-card { grid-template-columns: 1fr; text-align: left; gap: 6px; }
-      .alfa-ler-visual { min-height: 220px; }
-      .alfa-ler-logo-frame { width: min(100%, 470px); }
-    }
+  .nav-menu,
+  .nav-cta,
+  .nav-client {
+    display: none !important;
+  }
+
+  .menu-toggle { display: flex; }
+  .topbar { display: none; }
+  .section { padding: 72px 0; }
+  .split { grid-template-columns: 1fr; gap: 38px; }
+  .split-media { min-height: 340px; }
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .cta-box {
+    padding: 32px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .plans-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .tv-showcase {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .tv-highlights div { justify-content: center; }
+  .tv-showcase-image { min-height: auto; }
+
+  .tv-showcase-image img {
+    transform: none;
+    width: min(100%, 380px);
+  }
+
+  .contracts-grid { grid-template-columns: 1fr; }
+  .contracts-info { padding: 32px 22px; }
+
+  .alfa-ler-card {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 6px;
+  }
+
+  .alfa-ler-visual { min-height: 220px; }
+  .alfa-ler-logo-frame { width: min(100%, 470px); }
+}
 
     @media (max-width: 600px) {
       .container { width: min(100% - 26px, var(--container)); }
@@ -1830,29 +1859,55 @@
   <header class="navbar" id="navbar">
     <div class="container nav-wrap">
 
-      <a href="#inicio" class="brand" aria-label="Alfa Internet e TV">
-        <img src="logo-alfa.png" alt="Alfa Internet e TV">
-      </a>
+  <a href="#inicio" class="brand" aria-label="Alfa Internet e TV">
+    <img src="logo-alfa.png" alt="Alfa Internet e TV">
+  </a>
 
-      <nav class="nav-menu" id="navMenu" aria-label="Menu principal">
-        <a href="#inicio" data-section="inicio">Início</a>
-        <a href="#planos" data-section="planos">Planos</a>
-        <a href="#canais" data-section="canais">Canais</a>
-        <a href="#sobre" data-section="sobre">Sobre nós</a>
-        <a href="#contato" data-section="contato">Contato</a>
-      </nav>
+  <nav class="nav-menu" id="navMenu" aria-label="Menu principal">
+    <a href="#inicio" data-section="inicio">Início</a>
+    <a href="#planos" data-section="planos">Planos</a>
+    <a href="#canais" data-section="canais">Canais</a>
+    <a href="#sobre" data-section="sobre">Sobre nós</a>
+    <a href="#contato" data-section="contato">Contato</a>
+  </nav>
 
-      <a class="btn btn-primary nav-cta" href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20contratar%20um%20plano%20da%20Alfa." target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
+ <div class="nav-actions">
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-        <i class="fa-solid fa-bars" id="menuIcon"></i>
-      </button>
-    </div>
+  <a
+    class="btn btn-outline nav-client"
+    href="https://alfatelecomunicacoes.tv.br/central_assinante_web/login"
+    target="_blank"
+    rel="noopener"
+  >
+    <i class="fa-solid fa-user"></i>
+    Central do cliente
+  </a>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menu mobile">
+  <a
+    class="btn btn-primary nav-cta"
+    href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20contratar%20um%20plano%20da%20Alfa."
+    target="_blank"
+    rel="noopener"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+    WhatsApp
+  </a>
+
+</div>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Abrir menu"
+    aria-expanded="false"
+  >
+    <i class="fa-solid fa-bars" id="menuIcon"></i>
+  </button>
+
+</div>
+
+   <!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menu mobile">
 
   <a href="#inicio" data-section="inicio">
     <i class="fa-solid fa-house"></i>
@@ -1875,19 +1930,28 @@
   </a>
 
   <a href="#contato" data-section="contato">
-    <i class="fa-solid fa-headset"></i>
-    <span>Contato</span>
-  </a>
+  <i class="fa-solid fa-headset"></i>
+  <span>Contato</span>
+</a>
 
-  <a
-    class="mobile-whatsapp"
-    href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20contratar%20um%20plano%20da%20Alfa."
-    target="_blank"
-    rel="noopener"
-  >
-    <i class="fa-brands fa-whatsapp"></i>
-    <span>Falar no WhatsApp</span>
-  </a>
+<a
+  href="https://alfatelecomunicacoes.tv.br/central_assinante_web/login"
+  target="_blank"
+  rel="noopener"
+>
+  <i class="fa-solid fa-user"></i>
+  <span>Central do cliente</span>
+</a>
+
+<a
+  class="mobile-whatsapp"
+  href="https://wa.me/5522999555359?text=Ol%C3%A1!%20Gostaria%20de%20contratar%20um%20plano%20da%20Alfa."
+  target="_blank"
+  rel="noopener"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+  <span>Falar no WhatsApp</span>
+</a>
 
 </div>
   </header>
@@ -2473,7 +2537,7 @@
       <div class="footer-col">
         <h4>Links úteis</h4>
         <a href="https://alfatelecomunicacoes.tv.br/central_assinante_web/login" target="_blank" rel="noopener">
-          <i class="fa-solid fa-user"></i> Central do cliente
+          <i></i> Central do cliente
         </a>
         <a href="https://www.speedtest.net/" target="_blank" rel="noopener">Teste de velocidade</a>
         <button data-contracts-link type="button">Contrato e Regulamentos</button>
